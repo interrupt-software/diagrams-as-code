@@ -2,18 +2,13 @@
 <svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Rectangle</title>
     <defs>
-        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-            <stop stop-color="#E02020" offset="0%"></stop>
-            <stop stop-color="#FA6400" offset="16.7194618%"></stop>
-            <stop stop-color="#F7B500" offset="33.3898731%"></stop>
-            <stop stop-color="#6DD400" offset="50.0513863%"></stop>
-            <stop stop-color="#0091FF" offset="66.5668601%"></stop>
-            <stop stop-color="#6236FF" offset="83.3200233%"></stop>
-            <stop stop-color="#B620E0" offset="100%"></stop>
-        </linearGradient>
+        <radialGradient cx="54.5672448%" cy="50%" fx="54.5672448%" fy="50%" r="83.9047089%" gradientTransform="translate(0.545672,0.500000),rotate(135.971715),scale(1.000000,1.045898),translate(-0.545672,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#0E0F12" offset="0%"></stop>
+            <stop stop-color="#373942" stop-opacity="0.5" offset="100%"></stop>
+        </radialGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.5" stroke-opacity="0.5">
-        <g id="Extra-Large" transform="translate(-1335.000000, -200.000000)" fill="url(#linearGradient-1)" stroke="#222222" stroke-width="5">
+        <g id="Extra-Large" transform="translate(-1335.000000, -200.000000)" fill="url(#radialGradient-1)" stroke="#222222" stroke-width="5">
             <rect id="Rectangle" x="1337.5" y="202.5" width="195" height="195" rx="5"></rect>
         </g>
     </g>

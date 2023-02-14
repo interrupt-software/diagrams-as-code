@@ -43,14 +43,17 @@ with main_diagram:
     sample_01_url = "https://github.com/interrupt-software/diagrams-as-code/raw/main/icons/sample_01.svg"
     sample_02_url = "https://github.com/interrupt-software/diagrams-as-code/raw/main/icons/sample_02.svg"
     sample_03_url = "https://github.com/interrupt-software/diagrams-as-code/raw/main/icons/sample_03.svg"
+    sample_04_url = "https://github.com/interrupt-software/diagrams-as-code/raw/main/icons/sample_04.svg"
 
     sample_01 = "sample_01.svg"
     sample_02 = "sample_02.svg"
     sample_03 = "sample_03.svg"
+    sample_04 = "sample_04.svg"
 
     urlretrieve(sample_01_url, sample_01)
     urlretrieve(sample_02_url, sample_02)
     urlretrieve(sample_03_url, sample_03)
+    urlretrieve(sample_04_url, sample_04)
 
     for node in nodes:
         node_name = node.get_name().split(' ')[1].replace(" ","")
@@ -62,7 +65,7 @@ with main_diagram:
         elif shape_attr == "note":
             dnodes.append(Custom(node_name, sample_03))
         else:
-            dnodes.append(Custom(node_name, sample_01)) 
+            dnodes.append(Custom(node_name, sample_04)) 
             continue
 
 def find_node(node_list, label):
