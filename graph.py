@@ -37,12 +37,12 @@ edge_attr = {
     "shape": "normal"
 }
 
-main_diagram = Diagram("HashiCat Deployment", show=False, direction="RL", filename="graph", outformat="png", graph_attr=graph_attr, node_attr=node_attr)
+main_diagram = Diagram("HashiCat Deployment", show=False, direction="RL", filename="graph", outformat="svg", graph_attr=graph_attr, node_attr=node_attr)
 
 with main_diagram:
-    sample_01_url = "https://raw.githubusercontent.com/interrupt-software/diagrams-as-code/main/icons/sample_01.svg"
-    sample_02_url = "https://raw.githubusercontent.com/interrupt-software/diagrams-as-code/main/icons/sample_02.svg"
-    sample_03_url = "https://raw.githubusercontent.com/interrupt-software/diagrams-as-code/main/icons/sample_03.svg"
+    sample_01_url = "https://github.com/interrupt-software/diagrams-as-code/raw/main/icons/sample_01.svg"
+    sample_02_url = "https://github.com/interrupt-software/diagrams-as-code/raw/main/icons/sample_02.svg"
+    sample_03_url = "https://github.com/interrupt-software/diagrams-as-code/raw/main/icons/sample_03.svg"
 
     sample_01 = "sample_01.svg"
     sample_02 = "sample_02.svg"
