@@ -3,6 +3,8 @@ import pygraphviz as pgv
 # diagram.py
 from diagrams import Diagram, Cluster, Edge
 from diagrams.custom import Custom
+# For basic diagram icons on GitHub
+from urllib.request import urlretrieve
 
 graph = pgv.AGraph("graph.dot")
 
@@ -38,17 +40,29 @@ edge_attr = {
 main_diagram = Diagram("HashiCat Deployment", show=False, direction="RL", filename="graph", outformat="svg", graph_attr=graph_attr, node_attr=node_attr)
 
 with main_diagram:
+    sample_01_url = "https://raw.githubusercontent.com/interrupt-software/diagrams-as-code/main/icons/sample_01.svg"
+    sample_02_url = "https://raw.githubusercontent.com/interrupt-software/diagrams-as-code/main/icons/sample_02.svg"
+    sample_03_url = "https://raw.githubusercontent.com/interrupt-software/diagrams-as-code/main/icons/sample_03.svg"
+
+    sample_01 = "sample_01.svg"
+    sample_02 = "sample_02.svg"
+    sample_03 = "sample_03.svg"
+
+    urlretrieve(sample_01_url, sample_01)
+    urlretrieve(sample_02_url, sample_02)
+    urlretrieve(sample_03_url, sample_03)
+
     for node in nodes:
         node_name = node.get_name().split(' ')[1].replace(" ","")
         shape_attr = node.attr['shape']
         if shape_attr == "box":
-            dnodes.append(Custom(node_name, "./icons/sample_01.svg"))
+            dnodes.append(Custom(node_name, sample_01))
         elif shape_attr == "diamond":
-            dnodes.append(Custom(node_name, "./icons/sample_02.svg"))
+            dnodes.append(Custom(node_name, sample_02))
         elif shape_attr == "note":
-            dnodes.append(Custom(node_name, "./icons/sample_03.svg"))
+            dnodes.append(Custom(node_name, sample_03))
         else:
-            dnodes.append(Custom(node_name, "./icons/sample_01.svg")) 
+            dnodes.append(Custom(node_name, sample_01)) 
             continue
 
 def find_node(node_list, label):
