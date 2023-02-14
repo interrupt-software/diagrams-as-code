@@ -1,0 +1,73 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_eip.hashicat (expand)" [label = "aws_eip.hashicat", shape = "box"]
+		"[root] aws_eip_association.hashicat (expand)" [label = "aws_eip_association.hashicat", shape = "box"]
+		"[root] aws_instance.hashicat (expand)" [label = "aws_instance.hashicat", shape = "box"]
+		"[root] aws_internet_gateway.hashicat (expand)" [label = "aws_internet_gateway.hashicat", shape = "box"]
+		"[root] aws_key_pair.hashicat (expand)" [label = "aws_key_pair.hashicat", shape = "box"]
+		"[root] aws_route_table.hashicat (expand)" [label = "aws_route_table.hashicat", shape = "box"]
+		"[root] aws_route_table_association.hashicat (expand)" [label = "aws_route_table_association.hashicat", shape = "box"]
+		"[root] aws_security_group.hashicat (expand)" [label = "aws_security_group.hashicat", shape = "box"]
+		"[root] aws_subnet.hashicat (expand)" [label = "aws_subnet.hashicat", shape = "box"]
+		"[root] aws_vpc.hashicat (expand)" [label = "aws_vpc.hashicat", shape = "box"]
+		"[root] data.aws_ami.ubuntu (expand)" [label = "data.aws_ami.ubuntu", shape = "box"]
+		"[root] null_resource.configure-cat-app (expand)" [label = "null_resource.configure-cat-app", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/null\"]" [label = "provider[\"registry.terraform.io/hashicorp/null\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/tls\"]" [label = "provider[\"registry.terraform.io/hashicorp/tls\"]", shape = "diamond"]
+		"[root] tls_private_key.hashicat (expand)" [label = "tls_private_key.hashicat", shape = "box"]
+		"[root] var.address_space" [label = "var.address_space", shape = "note"]
+		"[root] var.admin_username" [label = "var.admin_username", shape = "note"]
+		"[root] var.height" [label = "var.height", shape = "note"]
+		"[root] var.instance_type" [label = "var.instance_type", shape = "note"]
+		"[root] var.placeholder" [label = "var.placeholder", shape = "note"]
+		"[root] var.prefix" [label = "var.prefix", shape = "note"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.subnet_prefix" [label = "var.subnet_prefix", shape = "note"]
+		"[root] var.width" [label = "var.width", shape = "note"]
+		"[root] aws_eip.hashicat (expand)" -> "[root] aws_instance.hashicat (expand)"
+		"[root] aws_eip_association.hashicat (expand)" -> "[root] aws_eip.hashicat (expand)"
+		"[root] aws_instance.hashicat (expand)" -> "[root] aws_key_pair.hashicat (expand)"
+		"[root] aws_instance.hashicat (expand)" -> "[root] aws_security_group.hashicat (expand)"
+		"[root] aws_instance.hashicat (expand)" -> "[root] aws_subnet.hashicat (expand)"
+		"[root] aws_instance.hashicat (expand)" -> "[root] data.aws_ami.ubuntu (expand)"
+		"[root] aws_instance.hashicat (expand)" -> "[root] var.instance_type"
+		"[root] aws_internet_gateway.hashicat (expand)" -> "[root] aws_vpc.hashicat (expand)"
+		"[root] aws_key_pair.hashicat (expand)" -> "[root] local.private_key_filename (expand)"
+		"[root] aws_key_pair.hashicat (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_key_pair.hashicat (expand)" -> "[root] tls_private_key.hashicat (expand)"
+		"[root] aws_route_table.hashicat (expand)" -> "[root] aws_internet_gateway.hashicat (expand)"
+		"[root] aws_route_table_association.hashicat (expand)" -> "[root] aws_route_table.hashicat (expand)"
+		"[root] aws_route_table_association.hashicat (expand)" -> "[root] aws_subnet.hashicat (expand)"
+		"[root] aws_security_group.hashicat (expand)" -> "[root] aws_vpc.hashicat (expand)"
+		"[root] aws_subnet.hashicat (expand)" -> "[root] aws_vpc.hashicat (expand)"
+		"[root] aws_subnet.hashicat (expand)" -> "[root] var.subnet_prefix"
+		"[root] aws_vpc.hashicat (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_vpc.hashicat (expand)" -> "[root] var.address_space"
+		"[root] aws_vpc.hashicat (expand)" -> "[root] var.prefix"
+		"[root] data.aws_ami.ubuntu (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] local.private_key_filename (expand)" -> "[root] var.prefix"
+		"[root] null_resource.configure-cat-app (expand)" -> "[root] aws_eip_association.hashicat (expand)"
+		"[root] null_resource.configure-cat-app (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/null\"]"
+		"[root] null_resource.configure-cat-app (expand)" -> "[root] var.height"
+		"[root] null_resource.configure-cat-app (expand)" -> "[root] var.placeholder"
+		"[root] null_resource.configure-cat-app (expand)" -> "[root] var.width"
+		"[root] output.catapp_ip (expand)" -> "[root] aws_eip.hashicat (expand)"
+		"[root] output.catapp_url (expand)" -> "[root] aws_eip.hashicat (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_eip_association.hashicat (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.hashicat (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.region"
+		"[root] provider[\"registry.terraform.io/hashicorp/null\"] (close)" -> "[root] null_resource.configure-cat-app (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)" -> "[root] tls_private_key.hashicat (expand)"
+		"[root] root" -> "[root] output.catapp_ip (expand)"
+		"[root] root" -> "[root] output.catapp_url (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/null\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)"
+		"[root] root" -> "[root] var.admin_username"
+		"[root] tls_private_key.hashicat (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"]"
+	}
+}
+
